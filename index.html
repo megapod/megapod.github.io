@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TerraVectors · Games</title>
+<meta name="description" content="TerraVectors makes small, calm mobile games for Android. GlideTile and Rebound are on Google Play.">
+<link rel="icon" href="img/glidetile_icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --night: #0a0e1c;
+    --panel: #141a30;
+    --border: #2c3550;
+    --ink: #f0f3ff;
+    --muted: #8891bd;
+    --gold: #ffb22c;
+    --green: #2fae56;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--night);
+    background-image:
+      radial-gradient(1.4px 1.4px at 40px 60px, #fff, transparent 60%),
+      radial-gradient(1px 1px at 180px 30px, #cdd3f0, transparent 60%),
+      radial-gradient(1.2px 1.2px at 300px 180px, #fff, transparent 60%),
+      radial-gradient(1px 1px at 90px 260px, #fff, transparent 60%),
+      radial-gradient(1.3px 1.3px at 360px 320px, #cdd3f0, transparent 60%);
+    background-size: 420px 420px;
+    color: var(--ink);
+    font-family: 'Fredoka', system-ui, sans-serif;
+    line-height: 1.45;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+  header { padding: 72px 0 40px; text-align: center; }
+  header h1 { margin: 0; font-size: clamp(40px, 7vw, 64px); font-weight: 700; letter-spacing: -0.5px; }
+  header p { margin: 12px auto 0; max-width: 520px; color: var(--muted); font-size: 20px; font-weight: 500; }
+
+  .games { display: grid; gap: 28px; padding-bottom: 56px; }
+  @media (min-width: 760px) { .games { grid-template-columns: 1fr 1fr; } }
+
+  .card {
+    background: var(--panel);
+    border: 3px solid var(--border);
+    border-radius: 28px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .45);
+  }
+  .card .hero { display: block; width: 100%; height: auto; aspect-ratio: 1024 / 500; object-fit: cover; }
+  .card .body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+  .title { display: flex; align-items: center; gap: 14px; }
+  .title img { width: 56px; height: 56px; border-radius: 14px; }
+  .title h2 { margin: 0; font-size: 26px; font-weight: 700; }
+  .title span { display: block; color: var(--muted); font-size: 15px; font-weight: 500; }
+  .card p { margin: 0; color: #c9cfee; font-size: 17px; flex: 1; }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 12px 20px; border-radius: 16px;
+    font-family: inherit; font-size: 17px; font-weight: 600; text-decoration: none;
+  }
+  .btn.play { background: var(--green); color: #fff; box-shadow: 0 4px 0 #1f7a3c; }
+  .btn.play:hover { filter: brightness(1.08); }
+  .btn.ghost { color: var(--ink); border: 2px solid var(--border); }
+  .btn.ghost:hover { border-color: var(--muted); }
+
+  footer { border-top: 1px solid var(--border); padding: 28px 0 48px; color: var(--muted); font-size: 16px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; }
+  footer a { color: var(--ink); }
+  footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <h1>TerraVectors</h1>
+  <p>Small mobile games, made by one developer. Easy to pick up, calm to play.</p>
+</header>
+
+<main class="wrap games">
+
+  <article class="card">
+    <img class="hero" src="img/glidetile_feature.jpg" alt="GlideTile: a sliding puzzle with a jungle picture" width="1024" height="500">
+    <div class="body">
+      <div class="title">
+        <img src="img/glidetile_icon.png" alt="" width="56" height="56">
+        <div><h2>GlideTile</h2><span>Sliding puzzle · Android</span></div>
+      </div>
+      <p>Slide the tiles, finish the picture, and watch it come alive. A new Picture of the Day every day turns into real footage when you solve it.</p>
+      <div class="actions">
+        <a class="btn play" href="https://play.google.com/store/apps/details?id=com.yehuda.glidetile">Get it on Google Play</a>
+        <a class="btn ghost" href="https://youtu.be/Fcg7CUNxXWk">Watch the trailer</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <img class="hero" src="img/rebound_feature.jpg" alt="Rebound: 1v1 streetball on a city court" width="1024" height="500">
+    <div class="body">
+      <div class="title">
+        <img src="img/rebound_icon.png" alt="" width="56" height="56">
+        <div><h2>Rebound</h2><span>1v1 streetball · Android</span></div>
+      </div>
+      <p>One on one streetball. Play online, on the same wifi, or against the CPU. Timing based shots, dunks and crossovers. First to 11 wins.</p>
+      <div class="actions">
+        <a class="btn play" href="https://play.google.com/store/apps/details?id=com.yehuda.rebound">Get it on Google Play</a>
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Contact: <a href="mailto:terravectors@gmail.com">terravectors@gmail.com</a></div>
+    <nav>
+      <a href="https://megapod.github.io/glidetile-site/privacy.html">GlideTile privacy</a>
+      <a href="https://megapod.github.io/rebound-site/privacy.html">Rebound privacy</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
