@@ -3,122 +3,122 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TerraVectors · Games</title>
-<meta name="description" content="Mobile games by one developer. GlideTile and Rebound are on Google Play.">
+<title>TerraVectors · Casual small games</title>
+<meta name="description" content="Casual small games for Android by TerraVectors. GlideTile and Rebound are on Google Play.">
 <link rel="icon" href="img/glidetile_icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --night: #0a0e1c;
-    --panel: #141a30;
-    --border: #2c3550;
+    --line: #232b45;
     --ink: #f0f3ff;
+    --soft: #c3c9e8;
     --muted: #8891bd;
     --gold: #ffb22c;
     --green: #2fae56;
+    --green-dark: #1f7a3c;
   }
   * { box-sizing: border-box; }
-  html { background: #0a0e1c; }
+  html { background: var(--night); }
   html, body { margin: 0; min-height: 100%; }
   body {
-    background: var(--night);
+    background-color: var(--night);
     background-image:
       radial-gradient(1.4px 1.4px at 40px 60px, #fff, transparent 60%),
-      radial-gradient(1px 1px at 180px 30px, #cdd3f0, transparent 60%),
-      radial-gradient(1.2px 1.2px at 300px 180px, #fff, transparent 60%),
-      radial-gradient(1px 1px at 90px 260px, #fff, transparent 60%),
-      radial-gradient(1.3px 1.3px at 360px 320px, #cdd3f0, transparent 60%);
-    background-size: 420px 420px;
+      radial-gradient(1px 1px at 190px 30px, #cdd3f0, transparent 60%),
+      radial-gradient(1.2px 1.2px at 320px 210px, #fff, transparent 60%),
+      radial-gradient(1px 1px at 110px 330px, #cdd3f0, transparent 60%);
+    background-size: 460px 460px;
     color: var(--ink);
     font-family: 'Fredoka', system-ui, sans-serif;
-    line-height: 1.45;
+    line-height: 1.5;
   }
-  .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+  a { color: inherit; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
 
-  header { padding: 72px 0 40px; text-align: center; }
-  header h1 { margin: 0; font-size: clamp(40px, 7vw, 64px); font-weight: 700; letter-spacing: -0.5px; }
-  header p { margin: 12px auto 0; max-width: 520px; color: var(--muted); font-size: 20px; font-weight: 500; }
+  /* header */
+  .top { border-bottom: 1px solid var(--line); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .mark { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 20px; }
+  .mark i { width: 14px; height: 14px; border-radius: 3px; background: var(--gold); transform: rotate(45deg); display: inline-block; }
+  .top nav a { color: var(--muted); text-decoration: none; font-size: 16px; font-weight: 500; }
+  .top nav a:hover { color: var(--ink); }
 
-  .games { display: grid; gap: 28px; padding-bottom: 56px; }
-  @media (min-width: 760px) { .games { grid-template-columns: 1fr 1fr; } }
+  /* intro */
+  .intro { padding: 72px 0 48px; }
+  .intro h1 { margin: 0; font-size: clamp(38px, 7vw, 60px); font-weight: 700; line-height: 1.05; letter-spacing: -0.5px; }
+  .intro p { margin: 12px 0 0; color: var(--muted); font-size: 20px; }
 
-  .card {
-    background: var(--panel);
-    border: 3px solid var(--border);
-    border-radius: 28px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, .45);
+  /* games */
+  .game { display: grid; gap: 24px; align-items: center; padding: 40px 0; border-top: 1px solid var(--line); }
+  .game img { display: block; width: 100%; height: auto; aspect-ratio: 1024 / 500; object-fit: cover; border-radius: 14px; box-shadow: 0 18px 44px rgba(0,0,0,.45); }
+  .game h2 { margin: 0; font-size: 32px; font-weight: 700; }
+  .game .kind { margin: 2px 0 12px; color: var(--gold); font-size: 15px; font-weight: 600; letter-spacing: .3px; }
+  .game p { margin: 0 0 22px; color: var(--soft); font-size: 18px; }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
+  .btn { display: inline-block; padding: 12px 22px; border-radius: 12px; background: var(--green); color: #fff; font-weight: 600; font-size: 17px; text-decoration: none; box-shadow: 0 4px 0 var(--green-dark); }
+  .btn:hover { filter: brightness(1.08); }
+  .link { color: var(--muted); font-weight: 500; font-size: 17px; text-decoration: none; border-bottom: 1px solid var(--line); }
+  .link:hover { color: var(--ink); border-color: var(--muted); }
+  @media (min-width: 820px) {
+    .game { grid-template-columns: 1.15fr 1fr; gap: 48px; padding: 56px 0; }
+    .game.flip .shot { order: 2; }
   }
-  .card .hero { display: block; width: 100%; height: auto; aspect-ratio: 1024 / 500; object-fit: cover; }
-  .card .body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
-  .title { display: flex; align-items: center; gap: 14px; }
-  .title img { width: 56px; height: 56px; border-radius: 14px; }
-  .title h2 { margin: 0; font-size: 26px; font-weight: 700; }
-  .title span { display: block; color: var(--muted); font-size: 15px; font-weight: 500; }
-  .card p { margin: 0; color: #c9cfee; font-size: 17px; flex: 1; }
-  .actions { display: flex; flex-wrap: wrap; gap: 10px; }
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center;
-    padding: 12px 20px; border-radius: 16px;
-    font-family: inherit; font-size: 17px; font-weight: 600; text-decoration: none;
-  }
-  .btn.play { background: var(--green); color: #fff; box-shadow: 0 4px 0 #1f7a3c; }
-  .btn.play:hover { filter: brightness(1.08); }
-  .btn.ghost { color: var(--ink); border: 2px solid var(--border); }
-  .btn.ghost:hover { border-color: var(--muted); }
 
-  footer { border-top: 1px solid var(--border); padding: 28px 0 48px; color: var(--muted); font-size: 16px; }
-  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; }
-  footer a { color: var(--ink); }
-  footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  /* footer */
+  footer { border-top: 1px solid var(--line); margin-top: 24px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 28px; padding-top: 24px; padding-bottom: 40px; color: var(--muted); font-size: 15px; }
+  footer nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+  footer a { text-decoration: none; }
+  footer a:hover { color: var(--ink); }
 </style>
 </head>
 <body>
 
-<header class="wrap">
-  <h1>TerraVectors</h1>
-  <p>Mobile games by one developer.</p>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="./"><i></i>TerraVectors</a>
+    <nav><a href="mailto:terravectors@gmail.com">Contact</a></nav>
+  </div>
 </header>
 
-<main class="wrap games">
+<main class="wrap">
+  <section class="intro">
+    <h1>Casual small games.</h1>
+    <p>For Android, on Google Play.</p>
+  </section>
 
-  <article class="card">
-    <img class="hero" src="img/glidetile_feature.jpg" alt="GlideTile: a sliding puzzle with a jungle picture" width="1024" height="500">
-    <div class="body">
-      <div class="title">
-        <img src="img/glidetile_icon.png" alt="" width="56" height="56">
-        <div><h2>GlideTile</h2><span>Sliding puzzle · Android</span></div>
-      </div>
+  <!-- one block per game; copy a block to add a game, add "flip" to alternate the side -->
+  <article class="game">
+    <a class="shot" href="https://play.google.com/store/apps/details?id=com.yehuda.glidetile"><img src="img/glidetile_feature.jpg" alt="GlideTile" width="1024" height="500"></a>
+    <div>
+      <h2>GlideTile</h2>
+      <div class="kind">Sliding puzzle</div>
       <p>A sliding picture puzzle. Pick a board from 3x3 to 5x5 and one of three levels. Play the Picture of the Day, the Big Puzzle, your own photo, or two players on one phone.</p>
       <div class="actions">
-        <a class="btn play" href="https://play.google.com/store/apps/details?id=com.yehuda.glidetile">Get it on Google Play</a>
-        <a class="btn ghost" href="https://youtu.be/Fcg7CUNxXWk">Watch the trailer</a>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.yehuda.glidetile">Get it on Google Play</a>
+        <a class="link" href="https://youtu.be/Fcg7CUNxXWk">Watch the trailer</a>
       </div>
     </div>
   </article>
 
-  <article class="card">
-    <img class="hero" src="img/rebound_feature.jpg" alt="Rebound: 1v1 streetball on a city court" width="1024" height="500">
-    <div class="body">
-      <div class="title">
-        <img src="img/rebound_icon.png" alt="" width="56" height="56">
-        <div><h2>Rebound</h2><span>1v1 streetball · Android</span></div>
-      </div>
+  <article class="game flip">
+    <a class="shot" href="https://play.google.com/store/apps/details?id=com.yehuda.rebound"><img src="img/rebound_feature.jpg" alt="Rebound" width="1024" height="500"></a>
+    <div>
+      <h2>Rebound</h2>
+      <div class="kind">1v1 streetball</div>
       <p>One on one streetball. Play online, on the same wifi, or against the CPU.</p>
       <div class="actions">
-        <a class="btn play" href="https://play.google.com/store/apps/details?id=com.yehuda.rebound">Get it on Google Play</a>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.yehuda.rebound">Get it on Google Play</a>
       </div>
     </div>
   </article>
-
 </main>
 
 <footer>
   <div class="wrap">
-    <div>Contact: <a href="mailto:terravectors@gmail.com">terravectors@gmail.com</a></div>
+    <a href="mailto:terravectors@gmail.com">terravectors@gmail.com</a>
     <nav>
       <a href="https://megapod.github.io/glidetile-site/privacy.html">GlideTile privacy</a>
       <a href="https://megapod.github.io/rebound-site/privacy.html">Rebound privacy</a>
